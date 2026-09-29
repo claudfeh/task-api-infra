@@ -123,6 +123,11 @@ resource "aws_instance" "app" {
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.app.id]
 
+  root_block_device {
+    volume_size = 20
+    volume_type = "gp3"
+  }
+
   user_data = templatefile("${path.module}/user_data.sh", {
     image = "ghcr.io/${var.ghcr_owner}/task-api:latest"
   })
