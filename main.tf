@@ -12,7 +12,7 @@ terraform {
   # so the state survives machine changes and can be shared/locked.
   # Create the bucket once (see README), then put its name below.
   backend "s3" {
-    bucket = "CHANGE_ME-task-api-tfstate"
+    bucket = "flaskapi-app-s3"
     key    = "task-api/terraform.tfstate"
     region = "us-east-1"
   }
