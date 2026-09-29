@@ -14,7 +14,7 @@ terraform {
   backend "s3" {
     bucket = "flaskapi-app-s3"
     key    = "task-api/terraform.tfstate"
-    region = "us-east-1"
+    region = "us-east-2"
   }
 }
 
